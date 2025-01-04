@@ -32,27 +32,26 @@ async def process_sent_voice(message: Message):
 # Этот хэндлер будет срабатывать на отправку боту гс
 @dp.message(F.voice)
 async def send_voice_echo(message: Message):
-    #print(message)
-    print(message)
+    print(message, "\n")
     await message.answer('Вы прислали голосовое сообщение!')
 
 # Этот хэндлер будет срабатывать на отправку боту фото
 @dp.message(F.photo)
 async def send_photo_echo(message: Message):
-    print(message)
+    print(message, "\n")
     await message.answer('Вы прислали фото!')
 
 # Этот хэндлер будет срабатывать на отправку боту видео
 @dp.message(F.video)
 async def send_video_echo(message: Message):
-    print(message)
+    print(message, "\n")
     await message.answer('Вы прислали видео!')
 
 # Этот хэндлер будет срабатывать на любые ваши текстовые сообщения,
 # кроме команд "/start" и "/help"
 @dp.message()
 async def send_echo(message: Message):
-    print(message)
+    print(message, "\n")
     await message.answer('Вы прислали текстовое сообщение!')
 
 
