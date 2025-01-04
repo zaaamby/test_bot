@@ -47,6 +47,12 @@ async def send_video_echo(message: Message):
     print(message, "\n")
     await message.answer('Вы прислали видео!')
 
+# Этот хэндлер будет срабатывать на отправку боту стикера
+@dp.message(F.sticker)
+async def send_sticker_echo(message: Message):
+    print(message, "\n")
+    await message.answer('Вы прислали стикер!')
+
 # Этот хэндлер будет срабатывать на любые ваши текстовые сообщения,
 # кроме команд "/start" и "/help"
 @dp.message()
