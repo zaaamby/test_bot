@@ -14,12 +14,12 @@ dp = Dispatcher()
 # Этот хэндлер будет срабатывать на команду "/start"
 @dp.message(Command(commands=["start"]))
 async def process_start_command(message: Message):
-    await message.answer('Привет\nМеня зовут Эхо-бот!\nПопробуй что-нибудь мне написать!')
+    await message.answer('Привет\nМеня зовут Type-бот!\nПопробуй что-нибудь мне написать!')
 
 # Этот хэндлер будет срабатывать на команду "/help"
 @dp.message(Command(commands=["help"]))
 async def process_help_command(message: Message):
-    await message.answer('Напиши мне любое сообщение, а я отправлю тебе его в ответ!')
+    await message.answer('Напиши мне любое сообщение, а я отправлю сообщение какого типа ты прислал!')
 
 # Этот хэндлер будет срабатывать на голосовые сообщения
 '''@dp.message(F.voice)
