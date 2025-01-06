@@ -21,6 +21,10 @@ async def process_start_command(message: Message):
 async def process_help_command(message: Message):
     await message.answer('Напиши мне любое сообщение, а я отправлю сообщение какого типа ты прислал!')
 
+@dp.message(Command(commands=["username"]))
+async def process_username_command(message: Message):
+    await message.answer(f'Ваш username: @{message.from_user.username}')
+
 # Этот хэндлер будет срабатывать на голосовые сообщения
 '''@dp.message(F.voice)
 async def process_sent_voice(message: Message):
@@ -58,7 +62,13 @@ async def send_sticker_echo(message: Message):
 @dp.message()
 async def send_echo(message: Message):
     print(message, "\n")
-    await message.answer('Вы прислали текстовое сообщение!')
+    if message.chat.id==875529941:
+        await message.answer('Maboko - гандон')
+    #875529941
+    elif message.chat.id==1375782712:
+        await message.answer('О, Сашуня, разработчик любит Сашулю!\nТы прислала текстовое сообщение!')
+    else:
+        await message.answer('Вы прислали текстовое сообщение!')
 
 
 
